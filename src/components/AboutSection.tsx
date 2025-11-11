@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { MandalaBg } from "./MandalaBg";
+import { JaliPattern } from "./JaliPattern";
 import { LotusDivider } from "./LotusDivider";
+import radhaKrishnaBg from "@/assets/radha-krishna-silhouette.jpg";
 
 export const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,123 +26,195 @@ export const AboutSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 bg-gradient-to-b from-sandalwood-cream to-background overflow-hidden">
-      {/* Decorative Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="about-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-              <circle cx="30" cy="30" r="1" fill="currentColor" className="text-peacock-teal" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#about-pattern)" />
+    <section
+      id="about"
+      ref={sectionRef}
+      className="relative py-32 overflow-hidden bg-gradient-to-br from-sacred-white via-sandalwood-cream to-background"
+    >
+      {/* Background Image with Enhanced Overlay */}
+      <div className="absolute inset-0 opacity-[0.08]">
+        <img src={radhaKrishnaBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-br from-peacock-teal/20 via-background/90 to-saffron-gold/20" />
+      </div>
+
+      {/* Jali Pattern */}
+      <JaliPattern opacity={0.05} className="text-peacock-teal" />
+
+      {/* Mandala Background */}
+      <MandalaBg className="opacity-[0.02]" animate={true} />
+
+      {/* Decorative Floating Elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 opacity-10">
+        <svg viewBox="0 0 128 128" className="w-full h-full">
+          <path d="M64 20 L70 50 L100 50 L75 70 L85 100 L64 80 L43 100 L53 70 L28 50 L58 50 Z" fill="currentColor" className="text-saffron-gold" />
+        </svg>
+      </div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 opacity-10">
+        <svg viewBox="0 0 160 160" className="w-full h-full rotate-45">
+          <circle cx="80" cy="80" r="60" fill="none" stroke="currentColor" strokeWidth="2" className="text-peacock-teal" />
+          <circle cx="80" cy="80" r="45" fill="none" stroke="currentColor" strokeWidth="1" className="text-saffron-gold" />
+          <circle cx="80" cy="80" r="30" fill="none" stroke="currentColor" strokeWidth="2" className="text-peacock-teal" />
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative">
-        <div className="max-w-5xl mx-auto">
-          {/* Title */}
-          <div className="text-center mb-16">
+      <div className="relative container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Main Heading with Enhanced Design */}
+          <div className="text-center mb-20">
             <h2
-              className={`font-cinzel text-5xl md:text-6xl font-bold mb-6 text-krishna-blue relative inline-block ${
+              className={`font-cinzel text-5xl md:text-7xl font-bold mb-8 text-krishna-blue relative inline-block ${
                 isVisible ? "scroll-reveal" : "opacity-0"
               }`}
             >
-              Rooted in Community. Built for Life.
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3">
-                <div className="w-20 h-px bg-gradient-to-r from-transparent to-temple-gold" />
-                <svg width="20" height="20" viewBox="0 0 20 20" className="text-temple-gold">
-                  <path d="M10 1 L12 7 L18 7 L13 11 L15 17 L10 13 L5 17 L7 11 L2 7 L8 7 Z" fill="currentColor" />
-                </svg>
-                <div className="w-20 h-px bg-gradient-to-l from-transparent to-temple-gold" />
-              </div>
+              <span className="relative">
+                Rooted in Community
+                <br />
+                <span className="bg-gradient-to-r from-peacock-teal via-temple-gold to-saffron-gold bg-clip-text text-transparent">
+                  Built for Life
+                </span>
+                {/* Animated Underline */}
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 w-full justify-center">
+                  <div className="h-px w-32 bg-gradient-to-r from-transparent via-peacock-teal to-transparent" />
+                  <svg width="24" height="24" viewBox="0 0 24 24" className="text-saffron-gold">
+                    <path d="M12 2 L14 9 L21 9 L15 13 L17 20 L12 16 L7 20 L9 13 L3 9 L10 9 Z" fill="currentColor" />
+                  </svg>
+                  <div className="h-px w-32 bg-gradient-to-l from-transparent via-saffron-gold to-transparent" />
+                </div>
+              </span>
             </h2>
-          </div>
-
-          {/* Content */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            {/* Left Column */}
-            <div
-              className={`${isVisible ? "scroll-reveal" : "opacity-0"}`}
-              style={{ animationDelay: "100ms" }}
+            <p
+              className={`font-cormorant text-2xl text-muted-foreground mt-12 ${
+                isVisible ? "scroll-reveal" : "opacity-0"
+              }`}
+              style={{ animationDelay: "50ms" }}
             >
-              <div className="bg-card rounded-3xl p-10 border-2 border-border/30 shadow-[0_12px_40px_hsl(215_65%_25%/0.08)] hover:shadow-[0_16px_48px_hsl(215_65%_25%/0.12)] transition-all duration-500">
-                <h3 className="font-cinzel text-2xl font-bold mb-4 text-krishna-blue">
-                  The Pinnacle of Private Living
-                </h3>
-                <p className="font-cormorant text-lg text-muted-foreground leading-relaxed">
-                  Spread across prime land on the <strong>Mathura–Goverdhan Highway</strong>, Girraj Enclave is a landmark township that blends modern infrastructure, security, and spiritual serenity.
-                </p>
-                <div className="mt-6 pt-6 border-t border-border/30">
-                  <p className="font-cormorant text-base text-muted-foreground">
-                    Strategically located at <strong>Jamuna Vata Chauraha</strong> with seamless access to Mathura, Vrindavan, Danghati, and Goverdhan.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column */}
-            <div
-              className={`${isVisible ? "scroll-reveal" : "opacity-0"}`}
-              style={{ animationDelay: "200ms" }}
-            >
-              <div className="space-y-6">
-                {/* Feature Box 1 */}
-                <div className="bg-gradient-to-br from-peacock-teal/10 to-krishna-blue/5 rounded-2xl p-8 border border-peacock-teal/20">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-peacock-teal/20 flex items-center justify-center flex-shrink-0">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-peacock-teal">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                        <circle cx="12" cy="10" r="3" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-cinzel text-lg font-bold mb-2 text-krishna-blue">Prime Location</h4>
-                      <p className="font-cormorant text-base text-muted-foreground">
-                        Direct access to major temples, schools, hospitals, and shopping centers
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Feature Box 2 */}
-                <div className="bg-gradient-to-br from-saffron-gold/10 to-temple-gold/5 rounded-2xl p-8 border border-saffron-gold/20">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-saffron-gold/20 flex items-center justify-center flex-shrink-0">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-saffron-gold">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-cinzel text-lg font-bold mb-2 text-krishna-blue">Future Growth</h4>
-                      <p className="font-cormorant text-base text-muted-foreground">
-                        MVDA approval in process with rapidly increasing property values
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Description */}
-          <div
-            className={`bg-gradient-to-br from-sacred-white to-card rounded-3xl p-10 border-2 border-border/30 shadow-lg ${
-              isVisible ? "scroll-reveal" : "opacity-0"
-            }`}
-            style={{ animationDelay: "300ms" }}
-          >
-            <p className="font-cormorant text-xl text-center text-krishna-blue leading-relaxed">
-              Designed as a <strong>premium gated township</strong>, residents enjoy world-class infrastructure, 
-              contemporary design elements, and a blend of <strong>luxury, convenience, and recreation</strong> within 
-              a secure environment — offering potential for future expansion and long-term value appreciation.
+              A landmark township blending modern living with spiritual serenity
             </p>
           </div>
-        </div>
 
-        {/* Lotus Divider */}
-        <LotusDivider variant="gradient" className="mt-20" />
+          {/* Enhanced Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+            {/* Main Description Card */}
+            <div
+              className={`about-card group ${isVisible ? "scroll-reveal" : "opacity-0"}`}
+              style={{ animationDelay: "100ms" }}
+            >
+              <div className="relative h-full bg-gradient-to-br from-card via-sacred-white/50 to-card backdrop-blur-xl rounded-3xl p-10 border-2 border-peacock-teal/30 shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-[0_24px_80px_hsl(185_55%_45%/0.25)] overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-32 h-32 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <svg viewBox="0 0 128 128" className="w-full h-full text-peacock-teal">
+                    <ellipse cx="64" cy="64" rx="48" ry="60" fill="currentColor" />
+                  </svg>
+                </div>
+                
+                <div className="relative">
+                  <div className="text-6xl mb-6">🏘️</div>
+                  <h3 className="font-cinzel text-2xl font-bold text-krishna-blue mb-4">Premium Township</h3>
+                  <p className="font-cormorant text-lg text-muted-foreground leading-relaxed">
+                    Spread across prime land on the <span className="text-krishna-blue font-bold">Mathura–Goverdhan Highway</span>, 
+                    offering well-planned community layout, future expansion potential, and long-term value appreciation.
+                  </p>
+                  <div className="mt-6 h-1 w-20 bg-gradient-to-r from-peacock-teal to-saffron-gold rounded-full group-hover:w-full transition-all duration-500" />
+                </div>
+              </div>
+            </div>
+
+            {/* Premium Features Card */}
+            <div
+              className={`about-card group ${isVisible ? "scroll-reveal" : "opacity-0"}`}
+              style={{ animationDelay: "200ms" }}
+            >
+              <div className="relative h-full bg-gradient-to-br from-saffron-gold/10 via-card to-peacock-teal/10 backdrop-blur-xl rounded-3xl p-10 border-2 border-saffron-gold/30 shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-[0_24px_80px_hsl(40_90%_55%/0.25)] overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-32 h-32 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <svg viewBox="0 0 128 128" className="w-full h-full text-saffron-gold">
+                    <path d="M64 10 L72 40 L102 40 L77 60 L87 90 L64 70 L41 90 L51 60 L26 40 L56 40 Z" fill="currentColor" />
+                  </svg>
+                </div>
+                
+                <div className="relative">
+                  <div className="text-6xl mb-6">🏛️</div>
+                  <h3 className="font-cinzel text-2xl font-bold text-krishna-blue mb-4">World-Class Living</h3>
+                  <p className="font-cormorant text-lg text-muted-foreground leading-relaxed">
+                    Designed as a <span className="text-peacock-teal font-bold">premium gated township</span> with world-class 
+                    infrastructure, contemporary design, and a perfect blend of luxury, convenience, and recreation.
+                  </p>
+                  <div className="mt-6 h-1 w-20 bg-gradient-to-r from-saffron-gold to-peacock-teal rounded-full group-hover:w-full transition-all duration-500" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Location Highlights - Full Width Card */}
+          <div
+            className={`about-card ${isVisible ? "scroll-reveal" : "opacity-0"}`}
+            style={{ animationDelay: "300ms" }}
+          >
+            <div className="relative bg-gradient-to-br from-peacock-teal/5 via-card to-saffron-gold/5 backdrop-blur-xl rounded-3xl p-12 border-2 border-peacock-teal/30 shadow-2xl overflow-hidden">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-[0.03]">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="location-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <circle cx="20" cy="20" r="1" fill="currentColor" className="text-peacock-teal" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#location-grid)" />
+                </svg>
+              </div>
+
+              <div className="relative">
+                <div className="text-center mb-10">
+                  <div className="text-7xl mb-4">📍</div>
+                  <h3 className="font-cinzel text-4xl font-bold mb-4 bg-gradient-to-r from-krishna-blue via-peacock-teal to-saffron-gold bg-clip-text text-transparent">
+                    The Pinnacle of Private Living
+                  </h3>
+                  <p className="font-cormorant text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+                    Strategically located at <span className="text-krishna-blue font-bold">Jamuna Vata Chauraha on Mathura Road</span>, 
+                    with seamless access to Mathura, Vrindavan, Danghati, Goverdhan, schools, hospitals, malls, markets, and major temples.
+                  </p>
+                </div>
+                
+                {/* Connectivity Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="connectivity-card group relative">
+                    <div className="absolute -inset-1 bg-gradient-to-br from-peacock-teal to-saffron-gold rounded-2xl opacity-30 group-hover:opacity-50 blur-lg transition-opacity" />
+                    <div className="relative bg-sacred-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-peacock-teal/30 transition-all duration-300 hover:scale-105 hover:border-peacock-teal/60">
+                      <div className="text-6xl mb-4">🛣️</div>
+                      <h4 className="font-cinzel text-xl font-bold text-krishna-blue mb-3">Highway Access</h4>
+                      <p className="font-cormorant text-base text-muted-foreground leading-relaxed">
+                        Direct connectivity via Mathura–Goverdhan Highway
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="connectivity-card group relative">
+                    <div className="absolute -inset-1 bg-gradient-to-br from-saffron-gold to-peacock-teal rounded-2xl opacity-30 group-hover:opacity-50 blur-lg transition-opacity" />
+                    <div className="relative bg-sacred-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-saffron-gold/30 transition-all duration-300 hover:scale-105 hover:border-saffron-gold/60">
+                      <div className="text-6xl mb-4">🚗</div>
+                      <h4 className="font-cinzel text-xl font-bold text-krishna-blue mb-3">Smooth Roads</h4>
+                      <p className="font-cormorant text-base text-muted-foreground leading-relaxed">
+                        Well-maintained road connectivity throughout
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="connectivity-card group relative">
+                    <div className="absolute -inset-1 bg-gradient-to-br from-peacock-teal to-saffron-gold rounded-2xl opacity-30 group-hover:opacity-50 blur-lg transition-opacity" />
+                    <div className="relative bg-sacred-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-peacock-teal/30 transition-all duration-300 hover:scale-105 hover:border-peacock-teal/60">
+                      <div className="text-6xl mb-4">🕉️</div>
+                      <h4 className="font-cinzel text-xl font-bold text-krishna-blue mb-3">Spiritual Hub</h4>
+                      <p className="font-cormorant text-base text-muted-foreground leading-relaxed">
+                        Modern living with spiritual ambience
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Lotus Divider */}
+          <LotusDivider variant="gradient" className="mt-20" />
+        </div>
       </div>
     </section>
   );

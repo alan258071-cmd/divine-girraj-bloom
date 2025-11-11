@@ -6,24 +6,32 @@ import sacredAnimalsBg from "@/assets/sacred-animals-bg.jpg";
 
 const highlights = [
   {
-    title: "Prime Highway",
-    description: "Mathura–Goverdhan Highway location",
-    value: "Direct Access",
+    title: "Prime Highway Location",
+    description: "Direct access via Mathura–Goverdhan Highway",
+    value: "Prime Location",
+    icon: "🛣️",
+    gradient: "from-peacock-teal to-krishna-blue",
   },
   {
     title: "MVDA Approval",
-    description: "In process for legal clarity",
-    value: "Authentic",
+    description: "Approval in process — ensuring legal clarity and authentic development",
+    value: "Legal Clarity",
+    icon: "✅",
+    gradient: "from-temple-gold to-saffron-gold",
   },
   {
-    title: "ROI Potential",
-    description: "Fast-developing corridor",
+    title: "High ROI Potential",
+    description: "Rapidly increasing property values in fast-developing corridor",
     value: "High Returns",
+    icon: "📈",
+    gradient: "from-saffron-gold to-peacock-teal",
   },
   {
-    title: "Limited Plots",
-    description: "Only 125 well-planned plots",
-    value: "Exclusive",
+    title: "Exclusive Offering",
+    description: "Only 125 well-planned plots for early investors",
+    value: "Limited Plots",
+    icon: "🏘️",
+    gradient: "from-krishna-blue to-temple-gold",
   },
 ];
 
@@ -107,7 +115,7 @@ export const InvestmentSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {highlights.map((highlight, index) => (
             <div
               key={index}
@@ -116,33 +124,41 @@ export const InvestmentSection = () => {
               }`}
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
-              {/* Card Container with Glow */}
-              <div className="relative h-full bg-card rounded-3xl p-10 border-2 border-border/40 transition-all duration-500 hover:scale-110 hover:shadow-[0_24px_80px_hsl(40_90%_55%/0.25)] hover:border-saffron-gold/70 overflow-hidden">
+              {/* Outer Glow Ring */}
+              <div className={`absolute -inset-1 bg-gradient-to-br ${highlight.gradient} rounded-3xl opacity-30 group-hover:opacity-60 blur-xl transition-all duration-500`} />
+              
+              {/* Card Container */}
+              <div className="relative h-full bg-gradient-to-br from-card via-sacred-white/30 to-card backdrop-blur-xl rounded-3xl p-10 border-2 border-border/40 transition-all duration-500 hover:scale-105 hover:shadow-[0_24px_80px_hsl(40_90%_55%/0.3)] hover:border-saffron-gold/80 overflow-hidden">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-peacock-teal/5 via-transparent to-saffron-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className={`absolute inset-0 bg-gradient-to-br ${highlight.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`} />
                 
-                {/* Peacock Feather Corner */}
-                <div className="absolute -top-2 -right-2 w-16 h-16 opacity-10 group-hover:opacity-20 transition-all duration-500 group-hover:rotate-12">
-                  <svg viewBox="0 0 64 64" className="w-full h-full">
-                    <ellipse cx="32" cy="24" rx="20" ry="25" fill="currentColor" className="text-peacock-teal" opacity="0.4" />
-                    <ellipse cx="32" cy="24" rx="12" ry="16" fill="currentColor" className="text-saffron-gold" opacity="0.3" />
+                {/* Corner Decorative Element */}
+                <div className="absolute top-4 right-4 w-10 h-10 opacity-20 group-hover:opacity-40 transition-all group-hover:rotate-180 duration-700">
+                  <svg viewBox="0 0 40 40" className={`w-full h-full bg-gradient-to-br ${highlight.gradient} rounded-full p-2`}>
+                    <path d="M20 5 L22 15 L32 15 L23 21 L27 31 L20 25 L13 31 L17 21 L8 15 L18 15 Z" fill="white" />
                   </svg>
                 </div>
 
                 <div className="relative">
-                  <div className="text-5xl font-cinzel font-bold mb-4 bg-gradient-to-br from-peacock-teal via-temple-gold to-saffron-gold bg-clip-text text-transparent drop-shadow-sm">
+                  <div className="text-7xl mb-6 transition-all duration-500 group-hover:scale-110 filter drop-shadow-lg">
+                    {highlight.icon}
+                  </div>
+                  <div className={`text-4xl font-cinzel font-bold mb-4 bg-gradient-to-br ${highlight.gradient} bg-clip-text text-transparent drop-shadow-sm`}>
                     {highlight.value}
                   </div>
-                  <h3 className="font-cinzel text-2xl font-bold mb-3 text-krishna-blue">
+                  <h3 className="font-cinzel text-xl font-bold mb-4 text-krishna-blue">
                     {highlight.title}
                   </h3>
                   <p className="font-cormorant text-base text-muted-foreground leading-relaxed">
                     {highlight.description}
                   </p>
                   
-                  {/* Bottom Accent */}
-                  <div className="mt-6 h-1 w-16 bg-gradient-to-r from-peacock-teal to-saffron-gold rounded-full opacity-50 group-hover:w-full group-hover:opacity-100 transition-all duration-500" />
+                  {/* Bottom Glow Line */}
+                  <div className={`mt-8 h-1.5 w-20 bg-gradient-to-r ${highlight.gradient} rounded-full group-hover:w-full transition-all duration-500 shadow-lg`} />
                 </div>
+
+                {/* Hover Shimmer */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-saffron-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-3xl animate-[shimmer_2s_ease-in-out_infinite]" />
               </div>
             </div>
           ))}

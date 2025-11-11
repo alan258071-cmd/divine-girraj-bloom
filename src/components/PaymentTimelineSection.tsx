@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { LotusDivider } from "./LotusDivider";
 
 const milestones = [
-  { label: "EOI Submission", percentage: "₹1 Lakh" },
-  { label: "Within 15-20 Days", percentage: "₹10 Lakh" },
-  { label: "After 5-6 Months", percentage: "₹10 Lakh" },
-  { label: "At Registry (1 Year)", percentage: "Remaining" },
+  { label: "On EOI Submission", amount: "₹1 Lakh", stage: "Stage 1" },
+  { label: "Within 15-20 Days", amount: "₹10 Lakh", stage: "Stage 2" },
+  { label: "After 5-6 Months", amount: "₹10 Lakh", stage: "Stage 3" },
+  { label: "At Registry (Within 1 Year)", amount: "Remaining", stage: "Stage 4" },
 ];
 
 export const PaymentTimelineSection = () => {
@@ -90,46 +90,55 @@ export const PaymentTimelineSection = () => {
             </div>
           </div>
 
-          <div className="flex justify-between relative">
+          <div className="flex justify-between items-start relative">
             {milestones.map((milestone, index) => (
               <div
                 key={index}
-                className={`timeline-step flex flex-col items-center ${
+                className={`timeline-step flex flex-col items-center flex-1 ${
                   isVisible ? "scroll-reveal" : "opacity-0"
                 }`}
                 style={{ animationDelay: `${(index + 1) * 100}ms` }}
               >
                 {/* Chip Container with Glow */}
-                <div className="relative">
+                <div className="relative mb-8">
                   {/* Outer Glow */}
-                  <div className="absolute -inset-2 bg-gradient-to-br from-peacock-teal to-saffron-gold rounded-full opacity-30 blur-lg" />
+                  <div className="absolute -inset-3 bg-gradient-to-br from-peacock-teal via-temple-gold to-saffron-gold rounded-full opacity-40 blur-xl" />
                   
                   {/* Chip */}
                   <div
-                    className="relative w-32 h-32 rounded-full bg-gradient-to-br from-card to-sacred-white border-4 border-peacock-teal flex flex-col items-center justify-center mb-6 transition-all duration-500 hover:scale-110 hover:rotate-6 hover:shadow-[0_16px_48px_hsl(185_55%_45%/0.4)] hover:border-saffron-gold overflow-hidden"
+                    className="relative w-36 h-36 rounded-full bg-gradient-to-br from-sacred-white via-card to-sandalwood-cream border-4 border-peacock-teal flex flex-col items-center justify-center transition-all duration-500 hover:scale-110 hover:rotate-6 hover:shadow-[0_20px_60px_hsl(185_55%_45%/0.5)] hover:border-saffron-gold overflow-hidden"
                     style={{
                       transitionDelay: `${(index + 1) * 100}ms`,
                       transform: isVisible ? "scale(1)" : "scale(0.8)",
                     }}
                   >
-                    {/* Inner Pattern */}
+                    {/* Inner Decorative Pattern */}
                     <div className="absolute inset-0 opacity-10">
-                      <svg viewBox="0 0 128 128" className="w-full h-full">
-                        <circle cx="64" cy="64" r="50" fill="none" stroke="currentColor" strokeWidth="1" className="text-peacock-teal" />
-                        <circle cx="64" cy="64" r="35" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-saffron-gold" />
+                      <svg viewBox="0 0 144 144" className="w-full h-full">
+                        <circle cx="72" cy="72" r="60" fill="none" stroke="currentColor" strokeWidth="2" className="text-peacock-teal" />
+                        <circle cx="72" cy="72" r="45" fill="none" stroke="currentColor" strokeWidth="1" className="text-saffron-gold" />
+                        <circle cx="72" cy="72" r="30" fill="none" stroke="currentColor" strokeWidth="2" className="text-temple-gold" />
                       </svg>
                     </div>
                     
-                    <span className="relative font-cinzel text-3xl font-bold bg-gradient-to-br from-peacock-teal to-krishna-blue bg-clip-text text-transparent">
-                      {milestone.percentage}
+                    {/* Stage Label */}
+                    <div className="absolute top-3 bg-gradient-to-r from-peacock-teal to-saffron-gold px-3 py-1 rounded-full">
+                      <span className="font-cinzel text-xs font-bold text-sacred-white">{milestone.stage}</span>
+                    </div>
+                    
+                    {/* Amount */}
+                    <span className="relative font-cinzel text-3xl font-bold bg-gradient-to-br from-peacock-teal via-krishna-blue to-saffron-gold bg-clip-text text-transparent drop-shadow-sm">
+                      {milestone.amount}
                     </span>
                   </div>
                 </div>
 
                 {/* Label */}
-                <span className="font-cormorant text-base font-bold text-krishna-blue">
-                  {milestone.label}
-                </span>
+                <div className="text-center px-2">
+                  <span className="font-cormorant text-lg font-bold text-krishna-blue leading-tight block">
+                    {milestone.label}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -145,16 +154,17 @@ export const PaymentTimelineSection = () => {
               }`}
               style={{ animationDelay: `${(index + 1) * 80}ms` }}
             >
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-br from-peacock-teal to-saffron-gold rounded-full opacity-40 blur-md" />
-                <div className="relative w-20 h-20 rounded-full bg-card border-4 border-peacock-teal flex items-center justify-center flex-shrink-0">
+              <div className="relative flex-shrink-0">
+                <div className="absolute -inset-2 bg-gradient-to-br from-peacock-teal via-temple-gold to-saffron-gold rounded-full opacity-40 blur-lg" />
+                <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-sacred-white to-card border-4 border-peacock-teal flex flex-col items-center justify-center">
+                  <span className="font-cinzel text-xs text-peacock-teal/70 mb-1">{milestone.stage}</span>
                   <span className="font-cinzel text-lg font-bold text-peacock-teal">
-                    {milestone.percentage}
+                    {milestone.amount}
                   </span>
                 </div>
               </div>
-              <div>
-                <span className="font-cormorant text-lg font-bold text-krishna-blue">
+              <div className="flex-1">
+                <span className="font-cormorant text-lg font-bold text-krishna-blue block">
                   {milestone.label}
                 </span>
               </div>
