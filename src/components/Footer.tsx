@@ -14,31 +14,32 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">GIRRAJ ENCLAVE</h3>
-            <p className="text-sacred-white/80 mb-4">
-              Experience divine living in the sacred land of Vrindavan. 125 premium residential plots designed for spiritual and comfortable living.
+            <h3 className="font-cinzel text-3xl font-bold mb-4">GIRRAJ ENCLAVE</h3>
+            <p className="font-cormorant text-lg text-sacred-white/80 mb-4 leading-relaxed">
+              Premium gated township on Mathura–Goverdhan Highway. 125 well-planned plots with modern infrastructure, 
+              24×7 security, and spiritual serenity. MVDA approval in process.
+            </p>
+            <p className="font-cormorant text-base text-sacred-white/70 mb-6">
+              <strong>Developer:</strong> Shrimanohar Real Estate
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
-                className="w-10 h-10 bg-sacred-white/10 rounded-full flex items-center justify-center hover:bg-peacock-teal transition-colors duration-300"
-              >
-                <span className="sr-only">Facebook</span>
-                📘
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-sacred-white/10 rounded-full flex items-center justify-center hover:bg-peacock-teal transition-colors duration-300"
+                href="https://www.instagram.com/shrimanohar_realestate"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-sacred-white/10 rounded-full flex items-center justify-center hover:bg-peacock-teal transition-colors duration-300"
               >
                 <span className="sr-only">Instagram</span>
                 📷
               </a>
               <a
-                href="#"
-                className="w-10 h-10 bg-sacred-white/10 rounded-full flex items-center justify-center hover:bg-peacock-teal transition-colors duration-300"
+                href="https://shrimanoharrealestate.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-sacred-white/10 rounded-full flex items-center justify-center hover:bg-peacock-teal transition-colors duration-300"
               >
-                <span className="sr-only">YouTube</span>
-                📹
+                <span className="sr-only">Website</span>
+                🌐
               </a>
             </div>
           </div>
@@ -72,19 +73,25 @@ export const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-3 text-sacred-white/80">
+            <h4 className="font-cinzel text-lg font-semibold mb-4">Contact Us</h4>
+            <ul className="space-y-3 font-cormorant text-sacred-white/80">
               <li className="flex items-start gap-2">
                 <span>📍</span>
-                <span>Mathura-Vrindavan Road, Uttar Pradesh</span>
+                <span>Jamuna Vata Chauraha, Mathura-Goverdhan Highway</span>
               </li>
               <li className="flex items-start gap-2">
                 <span>📞</span>
-                <span>+91 98765 43210</span>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:8445287511" className="hover:text-saffron-gold transition-colors">8445287511</a>
+                  <a href="tel:9027401565" className="hover:text-saffron-gold transition-colors">9027401565</a>
+                  <a href="tel:6395484543" className="hover:text-saffron-gold transition-colors">6395484543</a>
+                </div>
               </li>
               <li className="flex items-start gap-2">
-                <span>✉️</span>
-                <span>info@girrajenclave.com</span>
+                <span>🌐</span>
+                <a href="https://shrimanoharrealestate.com" target="_blank" rel="noopener noreferrer" className="hover:text-saffron-gold transition-colors">
+                  shrimanoharrealestate.com
+                </a>
               </li>
             </ul>
           </div>
@@ -92,15 +99,18 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-sacred-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-sacred-white/60">
-            © 2025 Girraj Enclave. All rights reserved.
+          <p className="font-cormorant text-sm text-sacred-white/60">
+            © 2025 Girraj Enclave by Shrimanohar Real Estate. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-6 text-sm font-cormorant">
             <a href="#" className="devotional-link text-sacred-white/60">
               Privacy Policy
             </a>
             <a href="#" className="devotional-link text-sacred-white/60">
               Terms & Conditions
+            </a>
+            <a href="#" className="devotional-link text-sacred-white/60">
+              RERA Details
             </a>
           </div>
         </div>

@@ -2,11 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { LotusDivider } from "./LotusDivider";
 
 const milestones = [
-  { label: "Booking", percentage: "10%" },
-  { label: "30 Days", percentage: "20%" },
-  { label: "60 Days", percentage: "20%" },
-  { label: "90 Days", percentage: "25%" },
-  { label: "On Possession", percentage: "25%" },
+  { label: "EOI Submission", percentage: "₹1 Lakh" },
+  { label: "Within 15-20 Days", percentage: "₹10 Lakh" },
+  { label: "After 5-6 Months", percentage: "₹10 Lakh" },
+  { label: "At Registry (1 Year)", percentage: "Remaining" },
 ];
 
 export const PaymentTimelineSection = () => {
@@ -56,7 +55,7 @@ export const PaymentTimelineSection = () => {
               isVisible ? "scroll-reveal" : "opacity-0"
             }`}
           >
-            Flexible Payment Plan
+            Pre-Launch Payment Plan
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3">
               <div className="w-24 h-px bg-gradient-to-r from-transparent to-temple-gold" />
               <svg width="20" height="20" viewBox="0 0 20 20" className="text-temple-gold">
@@ -73,7 +72,7 @@ export const PaymentTimelineSection = () => {
             }`}
             style={{ animationDelay: "100ms" }}
           >
-            Own your dream plot with our easy installment options
+            Easy installment structure for plot ownership
           </p>
         </div>
 

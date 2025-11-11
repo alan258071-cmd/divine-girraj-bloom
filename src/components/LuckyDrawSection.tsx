@@ -2,19 +2,46 @@ import { JaliPattern } from "./JaliPattern";
 
 const prizes = [
   {
-    title: "Grand Prize",
-    prize: "Royal Enfield Motorcycle",
-    icon: "🏍️",
+    title: "1st Prize",
+    prize: "Toyota Fortuner 4×2 AT",
+    value: "₹33.65 Lakh",
+    icon: "🏆",
   },
   {
-    title: "Second Prize",
-    prize: "Gold Coins Worth ₹50,000",
-    icon: "🪙",
+    title: "2nd Prize",
+    prize: "Innova Crysta 2.4 GX 8STR",
+    value: "₹18.66 Lakh",
+    icon: "🥈",
   },
   {
-    title: "Third Prize",
-    prize: "Premium Electronics Bundle",
-    icon: "📱",
+    title: "3rd Prize",
+    prize: "Mahindra Scorpio N Z4 Diesel",
+    value: "₹15.29 Lakh",
+    icon: "🥉",
+  },
+  {
+    title: "4th Prize",
+    prize: "XUV700 MX E 7STR Diesel",
+    value: "₹14.60 Lakh",
+    icon: "🚗",
+  },
+  {
+    title: "5th Prize",
+    prize: "Hyundai Creta EX Petrol",
+    value: "₹11.90 Lakh",
+    icon: "🚙",
+  },
+  {
+    title: "6th-25th",
+    prize: "Hyundai Aura, Punch, Wagon R & more",
+    value: "Up to ₹6.75L",
+    icon: "🎁",
+  },
+  {
+    title: "26th-125th",
+    prize: "Honda Activa DLX",
+    value: "₹95,000",
+    icon: "🛵",
   },
 ];
 
@@ -43,7 +70,7 @@ export const LuckyDrawSection = () => {
       <div className="relative container mx-auto px-4">
         <div className="text-center mb-20">
           <h2 className="font-cinzel text-5xl md:text-6xl font-bold mb-6 text-sacred-white relative inline-block">
-            Lucky Draw Bonanza
+            Lucky Draw — Win Big!
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3">
               <div className="w-20 h-px bg-gradient-to-r from-transparent to-saffron-gold" />
               <svg width="20" height="20" viewBox="0 0 20 20" className="text-saffron-gold">
@@ -53,13 +80,13 @@ export const LuckyDrawSection = () => {
               <div className="w-20 h-px bg-gradient-to-l from-transparent to-saffron-gold" />
             </div>
           </h2>
-          <p className="font-cormorant text-xl text-sacred-white/95 max-w-2xl mx-auto">
-            Book your plot and stand a chance to win exciting prizes
+          <p className="font-cormorant text-xl text-sacred-white/95 max-w-3xl mx-auto">
+            Pay ₹1 Lakh EOI + ₹10 Lakh within 1-20 days to enter the draw. Winners from 1st to 125th position!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {prizes.map((prize, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {prizes.slice(0, 5).map((prize, index) => (
             <div
               key={index}
               className="prize-card group relative"
@@ -94,7 +121,8 @@ export const LuckyDrawSection = () => {
                   <h3 className="font-cinzel text-3xl font-bold mb-3 text-saffron-gold drop-shadow-lg">
                     {prize.title}
                   </h3>
-                  <p className="font-cormorant text-lg text-sacred-white/95 leading-relaxed">{prize.prize}</p>
+                  <p className="font-cormorant text-lg text-sacred-white/95 leading-relaxed mb-2">{prize.prize}</p>
+                  <p className="font-cinzel text-xl font-bold text-temple-gold">{prize.value}</p>
                   
                   {/* Bottom Glow Line */}
                   <div className="mt-8 h-1.5 w-20 bg-gradient-to-r from-saffron-gold to-transparent rounded-full group-hover:w-full transition-all duration-500" />

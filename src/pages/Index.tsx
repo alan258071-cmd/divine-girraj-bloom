@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
+import { AboutSection } from "@/components/AboutSection";
 import { AmenitiesSection } from "@/components/AmenitiesSection";
 import { GallerySection } from "@/components/GallerySection";
 import { InvestmentSection } from "@/components/InvestmentSection";
@@ -41,6 +42,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-saffron-gold/5 to-transparent" />
         </div>
         
+        <AboutSection />
         <AmenitiesSection />
         
         {/* Divine Quotes Section */}

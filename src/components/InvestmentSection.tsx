@@ -6,24 +6,24 @@ import sacredAnimalsBg from "@/assets/sacred-animals-bg.jpg";
 
 const highlights = [
   {
-    title: "Prime Location",
-    description: "Minutes from Banke Bihari Temple",
-    value: "2 KM",
+    title: "Prime Highway",
+    description: "Mathura–Goverdhan Highway location",
+    value: "Direct Access",
   },
   {
-    title: "Plot Sizes",
-    description: "Flexible options for every need",
-    value: "100-500 sq.yd",
+    title: "MVDA Approval",
+    description: "In process for legal clarity",
+    value: "Authentic",
   },
   {
-    title: "Appreciation",
-    description: "Expected annual growth",
-    value: "15-20%",
+    title: "ROI Potential",
+    description: "Fast-developing corridor",
+    value: "High Returns",
   },
   {
-    title: "Payment Plan",
-    description: "Easy installment options",
-    value: "Flexible",
+    title: "Limited Plots",
+    description: "Only 125 well-planned plots",
+    value: "Exclusive",
   },
 ];
 

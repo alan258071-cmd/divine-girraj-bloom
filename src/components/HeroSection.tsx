@@ -71,9 +71,21 @@ export const HeroSection = () => {
           }}
         >
           <span className="bg-gradient-to-r from-sacred-white via-temple-gold to-sacred-white bg-clip-text text-transparent drop-shadow-2xl">
-            Experience Divine Living
+            Girraj Enclave
           </span>
         </h1>
+
+        {/* Tagline */}
+        <div
+          className="font-cormorant text-3xl md:text-4xl mb-4 text-sacred-white/95 font-semibold italic scroll-reveal"
+          style={{ 
+            animationDelay: "200ms",
+            textShadow: "0 2px 12px rgba(0,0,0,0.5)"
+          }}
+        >
+          "Your Space. Your Peace."
+        </div>
+
         <p
           className="font-cormorant text-xl md:text-3xl mb-8 text-sacred-white/95 max-w-3xl mx-auto scroll-reveal font-medium tracking-wide"
           style={{ 
@@ -81,7 +93,7 @@ export const HeroSection = () => {
             textShadow: "0 2px 12px rgba(0,0,0,0.5)"
           }}
         >
-          125 Premium Residential Plots in the Sacred Land of Vrindavan
+          125 Premium Residential Plots on Mathura–Goverdhan Highway
         </p>
 
         <div
@@ -93,7 +105,7 @@ export const HeroSection = () => {
               <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M10 1 L12 7 L18 7 L13 11 L15 17 L10 13 L5 17 L7 11 L2 7 L8 7 Z" />
               </svg>
-              Explore Plots
+              Book Your Plot Now
             </span>
             <div className="absolute inset-0 bg-gradient-to-br from-temple-gold to-saffron-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
@@ -101,10 +113,10 @@ export const HeroSection = () => {
           <button className="group relative bg-sacred-white/10 backdrop-blur-md border-2 border-sacred-white/40 text-sacred-white px-10 py-5 rounded-full font-cinzel font-semibold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-sacred-white/20 hover:border-sacred-white/60 peacock-sheen">
             <span className="relative z-10 flex items-center gap-3">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="10" cy="10" r="8" />
-                <path d="M8 10 L12 10 M10 8 L10 12" />
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
               </svg>
-              Virtual Tour
+              Download Brochure
             </span>
           </button>
         </div>
@@ -120,7 +132,7 @@ export const HeroSection = () => {
             <span className="relative block w-3 h-3 bg-saffron-gold rounded-full" />
           </div>
           <span className="font-cormorant text-base font-semibold text-krishna-blue tracking-wide">
-            Pre-Launch Offer • Only 125 Sacred Plots Available
+            Pre-Booking Open • Only 125 Plots • MVDA Approval in Process
           </span>
         </div>
       </div>

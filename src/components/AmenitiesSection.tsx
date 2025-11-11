@@ -6,34 +6,44 @@ import krishnaBlessingBg from "@/assets/krishna-blessing-bg.jpg";
 
 const amenities = [
   {
-    title: "Temple Architecture",
-    description: "Inspired by sacred Vrindavan temples",
-    icon: "🕉️",
-  },
-  {
-    title: "Landscaped Gardens",
-    description: "Tulsi gardens and meditation spaces",
-    icon: "🌿",
-  },
-  {
-    title: "Premium Infrastructure",
-    description: "Underground utilities, wide roads",
+    title: "Gated Society",
+    description: "Premium gated community with controlled access",
     icon: "🏛️",
   },
   {
-    title: "Gated Security",
-    description: "24/7 surveillance and controlled access",
+    title: "CCTV & 24×7 Security",
+    description: "Round-the-clock surveillance and security",
     icon: "🔒",
   },
   {
-    title: "Community Center",
-    description: "Satsang hall and gathering spaces",
-    icon: "🏡",
+    title: "Wide Roads",
+    description: "Spacious roads for comfortable movement",
+    icon: "🛣️",
   },
   {
-    title: "Water Features",
-    description: "Fountains and sacred water elements",
-    icon: "💧",
+    title: "Green Environment",
+    description: "Lush landscaping and eco-friendly design",
+    icon: "🌿",
+  },
+  {
+    title: "Premium Posh Area",
+    description: "Upscale neighborhood with modern amenities",
+    icon: "✨",
+  },
+  {
+    title: "MVDA Approval",
+    description: "Upcoming MVDA approval for legal clarity",
+    icon: "📋",
+  },
+  {
+    title: "Near Danghati Temple",
+    description: "Close to Danghati Temple & Goverdhan Parikrama",
+    icon: "🕉️",
+  },
+  {
+    title: "Easy Connectivity",
+    description: "Quick access to Mathura & Vrindavan",
+    icon: "🚗",
   },
 ];
 
@@ -97,7 +107,7 @@ export const AmenitiesSection = () => {
               isVisible ? "scroll-reveal" : "opacity-0"
             }`}
           >
-            Divine Amenities
+            World-Class Amenities
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
               <div className="w-12 h-px bg-gradient-to-r from-transparent to-temple-gold" />
               <svg width="16" height="16" viewBox="0 0 16 16" className="text-temple-gold">
@@ -113,7 +123,7 @@ export const AmenitiesSection = () => {
             }`}
             style={{ animationDelay: "100ms" }}
           >
-            Experience world-class facilities designed for spiritual and comfortable living
+            Modern infrastructure with spiritual serenity and secure living
           </p>
         </div>
 

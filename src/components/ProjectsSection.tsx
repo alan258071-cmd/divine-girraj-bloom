@@ -6,15 +6,17 @@ import radhaKrishnaBg from "@/assets/radha-krishna-silhouette.jpg";
 const projects = [
   {
     name: "Girraj Pathway",
-    location: "Mathura-Vrindavan Road",
-    status: "Completed",
+    location: "Mathura-Vrindavan Region",
+    status: "Completed & Delivered",
     image: "/api/placeholder/600/400",
+    features: ["24×7 Security", "Wide Roads", "Legal Documentation"],
   },
   {
     name: "Goverdhan Lok",
     location: "Near Govardhan Hill",
-    status: "Completed",
+    status: "Completed & Delivered",
     image: "/api/placeholder/600/400",
+    features: ["Landscaped Spaces", "Premium Infrastructure", "Quality Delivery"],
   },
 ];
 
@@ -37,12 +39,18 @@ export const ProjectsSection = () => {
 
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-krishna-blue relative inline-block">
-            Completed Projects
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-transparent via-temple-gold to-transparent" />
+          <h2 className="font-cinzel text-5xl md:text-6xl font-bold mb-6 text-krishna-blue relative inline-block">
+            Our Legacy of Excellence
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3">
+              <div className="w-24 h-px bg-gradient-to-r from-transparent to-temple-gold" />
+              <svg width="20" height="20" viewBox="0 0 20 20" className="text-temple-gold">
+                <path d="M10 1 L12 7 L18 7 L13 11 L15 17 L10 13 L5 17 L7 11 L2 7 L8 7 Z" fill="currentColor" />
+              </svg>
+              <div className="w-24 h-px bg-gradient-to-l from-transparent to-temple-gold" />
+            </div>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A legacy of trust and excellence
+          <p className="font-cormorant text-xl text-muted-foreground max-w-2xl mx-auto">
+            Proven track record of quality development and timely delivery
           </p>
         </div>
 
@@ -64,16 +72,28 @@ export const ProjectsSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-krishna-blue/80 to-transparent opacity-60" />
               </div>
 
-              <div className="p-6 scroll-reveal">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="px-3 py-1 bg-peacock-teal/20 text-peacock-teal text-xs font-semibold rounded-full">
+              <div className="p-8 scroll-reveal">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-4 py-1.5 bg-peacock-teal/20 text-peacock-teal text-sm font-semibold rounded-full border border-peacock-teal/30">
                     {project.status}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-krishna-blue">
+                <h3 className="font-cinzel text-3xl font-bold mb-3 text-krishna-blue">
                   {project.name}
                 </h3>
-                <p className="text-muted-foreground">{project.location}</p>
+                <p className="font-cormorant text-lg text-muted-foreground mb-4">{project.location}</p>
+                
+                {/* Features List */}
+                <div className="flex flex-wrap gap-2">
+                  {project.features.map((feature, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 bg-sandalwood-cream text-krishna-blue text-sm font-cormorant rounded-full border border-border/50"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -128,13 +148,18 @@ export const ProjectsSection = () => {
               </div>
 
               {/* Overlay Quote */}
-              <div className="mt-6 p-6 bg-sandalwood-cream rounded-xl border-l-4 border-saffron-gold">
-                <p className="text-lg italic text-krishna-blue">
-                  "Building sacred spaces for devotional living, one plot at a time."
+              <div className="mt-6 p-8 bg-sandalwood-cream rounded-xl border-l-4 border-saffron-gold">
+                <h4 className="font-cinzel text-xl font-bold mb-3 text-krishna-blue">
+                  By Shrimanohar Real Estate
+                </h4>
+                <p className="font-cormorant text-lg italic text-krishna-blue mb-3">
+                  "Building sacred communities with modern infrastructure, ensuring quality and timely delivery for every family."
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  — Founder, Girraj Developers
-                </p>
+                <div className="pt-3 border-t border-border/30">
+                  <p className="font-cormorant text-base text-muted-foreground">
+                    Established developer with completed projects: <strong>Girraj Pathway</strong> and <strong>Goverdhan Lok</strong>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
