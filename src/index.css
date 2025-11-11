@@ -213,6 +213,12 @@ All colors MUST be HSL.
     scroll-padding-top: 80px; /* Account for fixed header */
   }
 
+  /* Smooth performance optimizations */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   /* Custom scrollbar with devotional theme */
   ::-webkit-scrollbar {
     width: 12px;

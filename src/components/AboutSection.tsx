@@ -3,6 +3,8 @@ import { MandalaBg } from "./MandalaBg";
 import { JaliPattern } from "./JaliPattern";
 import { LotusDivider } from "./LotusDivider";
 import { KrishnaWatermark } from "./KrishnaWatermark";
+import { ParallaxBackground } from "./ParallaxBackground";
+import { ParallaxDecoration } from "./ParallaxDecoration";
 import radhaKrishnaBg from "@/assets/radha-krishna-silhouette.jpg";
 
 export const AboutSection = () => {
@@ -32,11 +34,13 @@ export const AboutSection = () => {
       ref={sectionRef}
       className="relative py-32 overflow-hidden bg-gradient-to-br from-sacred-white via-sandalwood-cream to-background"
     >
-      {/* Background Image with Enhanced Overlay */}
-      <div className="absolute inset-0 opacity-[0.08]">
-        <img src={radhaKrishnaBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-peacock-teal/20 via-background/90 to-saffron-gold/20" />
-      </div>
+      {/* Parallax Background Image */}
+      <ParallaxBackground 
+        imageSrc={radhaKrishnaBg}
+        alt="Radha Krishna"
+        speed={0.4}
+        opacity={0.08}
+      />
 
       {/* Jali Pattern */}
       <JaliPattern opacity={0.05} className="text-peacock-teal" />
@@ -44,23 +48,24 @@ export const AboutSection = () => {
       {/* Mandala Background */}
       <MandalaBg className="opacity-[0.02]" animate={true} />
 
-      {/* Krishna Watermarks */}
-      <KrishnaWatermark position="top-right" size="medium" opacity={0.06} />
-      <KrishnaWatermark position="bottom-left" size="large" opacity={0.04} />
+      {/* Krishna Watermarks with Parallax */}
+      <KrishnaWatermark position="top-right" size="medium" opacity={0.06} parallaxSpeed={0.2} />
+      <KrishnaWatermark position="bottom-left" size="large" opacity={0.04} parallaxSpeed={0.35} />
 
-      {/* Decorative Floating Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 opacity-10">
+      {/* Decorative Floating Elements with Parallax */}
+      <ParallaxDecoration speed={0.15} className="absolute top-20 left-10 w-32 h-32 opacity-10">
         <svg viewBox="0 0 128 128" className="w-full h-full">
           <path d="M64 20 L70 50 L100 50 L75 70 L85 100 L64 80 L43 100 L53 70 L28 50 L58 50 Z" fill="currentColor" className="text-saffron-gold" />
         </svg>
-      </div>
-      <div className="absolute bottom-20 right-10 w-40 h-40 opacity-10">
+      </ParallaxDecoration>
+      
+      <ParallaxDecoration speed={0.25} className="absolute bottom-20 right-10 w-40 h-40 opacity-10">
         <svg viewBox="0 0 160 160" className="w-full h-full rotate-45">
           <circle cx="80" cy="80" r="60" fill="none" stroke="currentColor" strokeWidth="2" className="text-peacock-teal" />
           <circle cx="80" cy="80" r="45" fill="none" stroke="currentColor" strokeWidth="1" className="text-saffron-gold" />
           <circle cx="80" cy="80" r="30" fill="none" stroke="currentColor" strokeWidth="2" className="text-peacock-teal" />
         </svg>
-      </div>
+      </ParallaxDecoration>
 
       <div className="relative container mx-auto px-4">
         <div className="max-w-6xl mx-auto">

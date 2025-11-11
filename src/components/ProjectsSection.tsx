@@ -2,6 +2,7 @@ import { useState } from "react";
 import { JaliPattern } from "./JaliPattern";
 import { KrishnaBlessings } from "./KrishnaBlessings";
 import { KrishnaWatermark } from "./KrishnaWatermark";
+import { ParallaxBackground } from "./ParallaxBackground";
 import radhaKrishnaBg from "@/assets/radha-krishna-silhouette.jpg";
 
 const projects = [
@@ -26,11 +27,14 @@ export const ProjectsSection = () => {
 
   return (
     <section id="projects" className="relative py-24 bg-gradient-to-b from-sacred-white to-background overflow-hidden">
-      {/* Radha Krishna Background */}
-      <div className="absolute inset-0 opacity-[0.08]">
-        <img src={radhaKrishnaBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-sacred-white/90 via-background/80 to-background/90" />
-      </div>
+      {/* Parallax Radha Krishna Background */}
+      <ParallaxBackground 
+        imageSrc={radhaKrishnaBg}
+        alt="Radha Krishna"
+        speed={0.38}
+        opacity={0.08}
+        overlayGradient="from-sacred-white/90 via-background/80 to-background/90"
+      />
 
       {/* Jali Pattern */}
       <JaliPattern opacity={0.04} className="text-peacock-teal" />
@@ -38,9 +42,9 @@ export const ProjectsSection = () => {
       {/* Krishna Blessings */}
       <KrishnaBlessings />
 
-      {/* Krishna Watermarks */}
-      <KrishnaWatermark position="top-left" size="medium" opacity={0.05} />
-      <KrishnaWatermark position="bottom-right" size="large" opacity={0.04} />
+      {/* Krishna Watermarks with Parallax */}
+      <KrishnaWatermark position="top-left" size="medium" opacity={0.05} parallaxSpeed={0.22} />
+      <KrishnaWatermark position="bottom-right" size="large" opacity={0.04} parallaxSpeed={0.38} />
 
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">

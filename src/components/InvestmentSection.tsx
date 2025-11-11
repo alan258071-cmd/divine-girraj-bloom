@@ -3,6 +3,7 @@ import { MandalaBg } from "./MandalaBg";
 import { LotusDivider } from "./LotusDivider";
 import { KrishnaBlessings } from "./KrishnaBlessings";
 import { KrishnaWatermark } from "./KrishnaWatermark";
+import { ParallaxBackground } from "./ParallaxBackground";
 import sacredAnimalsBg from "@/assets/sacred-animals-bg.jpg";
 
 const highlights = [
@@ -63,11 +64,14 @@ export const InvestmentSection = () => {
       ref={sectionRef}
       className="relative py-32 overflow-hidden"
     >
-      {/* Sacred Animals Background */}
-      <div className="absolute inset-0 opacity-[0.06]">
-        <img src={sacredAnimalsBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-peacock-teal/20 via-background/90 to-saffron-gold/20" />
-      </div>
+      {/* Parallax Sacred Animals Background */}
+      <ParallaxBackground 
+        imageSrc={sacredAnimalsBg}
+        alt="Sacred Animals"
+        speed={0.35}
+        opacity={0.06}
+        overlayGradient="from-peacock-teal/20 via-background/90 to-saffron-gold/20"
+      />
 
       {/* Complex Background Layers */}
       <div className="absolute inset-0">
@@ -86,9 +90,9 @@ export const InvestmentSection = () => {
       {/* Krishna Blessings */}
       <KrishnaBlessings />
 
-      {/* Krishna Watermarks */}
-      <KrishnaWatermark position="top-right" size="medium" opacity={0.05} />
-      <KrishnaWatermark position="center" size="large" opacity={0.03} />
+      {/* Krishna Watermarks with Parallax */}
+      <KrishnaWatermark position="top-right" size="medium" opacity={0.05} parallaxSpeed={0.28} />
+      <KrishnaWatermark position="center" size="large" opacity={0.03} parallaxSpeed={0.45} />
 
       <div className="relative container mx-auto px-4">
         <div className="text-center mb-20">

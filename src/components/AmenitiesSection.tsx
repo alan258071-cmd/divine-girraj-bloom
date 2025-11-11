@@ -3,6 +3,7 @@ import { JaliPattern } from "./JaliPattern";
 import { LotusDivider } from "./LotusDivider";
 import { KrishnaBlessings } from "./KrishnaBlessings";
 import { KrishnaWatermark } from "./KrishnaWatermark";
+import { ParallaxBackground } from "./ParallaxBackground";
 import krishnaBlessingBg from "@/assets/krishna-blessing-bg.jpg";
 
 const amenities = [
@@ -75,11 +76,14 @@ export const AmenitiesSection = () => {
       ref={sectionRef}
       className="relative py-24 overflow-hidden bg-gradient-to-b from-background to-sandalwood-cream"
     >
-      {/* Krishna Blessing Background */}
-      <div className="absolute inset-0 opacity-[0.08]">
-        <img src={krishnaBlessingBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80" />
-      </div>
+      {/* Parallax Krishna Blessing Background */}
+      <ParallaxBackground 
+        imageSrc={krishnaBlessingBg}
+        alt="Krishna Blessing"
+        speed={0.3}
+        opacity={0.08}
+        overlayGradient="from-background/80 via-background/60 to-background/80"
+      />
 
       {/* Jali Pattern */}
       <JaliPattern opacity={0.05} />
@@ -87,9 +91,9 @@ export const AmenitiesSection = () => {
       {/* Krishna Blessings Elements */}
       <KrishnaBlessings />
 
-      {/* Krishna Watermarks */}
-      <KrishnaWatermark position="top-left" size="medium" opacity={0.06} />
-      <KrishnaWatermark position="bottom-right" size="large" opacity={0.04} />
+      {/* Krishna Watermarks with Parallax */}
+      <KrishnaWatermark position="top-left" size="medium" opacity={0.06} parallaxSpeed={0.25} />
+      <KrishnaWatermark position="bottom-right" size="large" opacity={0.04} parallaxSpeed={0.4} />
 
       {/* Decorative Corner Elements */}
       <div className="absolute top-0 left-0 w-48 h-48 opacity-10 pointer-events-none">

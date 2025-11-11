@@ -1,14 +1,21 @@
+import { useRef } from "react";
+import { useParallax } from "@/hooks/useParallax";
+
 interface KrishnaWatermarkProps {
   position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center";
   size?: "small" | "medium" | "large";
   opacity?: number;
+  parallaxSpeed?: number;
 }
 
 export const KrishnaWatermark = ({ 
   position = "center", 
   size = "medium",
-  opacity = 0.05 
+  opacity = 0.05,
+  parallaxSpeed = 0.3
 }: KrishnaWatermarkProps) => {
+  const watermarkRef = useRef<HTMLDivElement>(null);
+  const parallaxOffset = useParallax(watermarkRef, { speed: parallaxSpeed });
   const positionClasses = {
     "top-left": "top-10 left-10",
     "top-right": "top-10 right-10",
@@ -25,8 +32,12 @@ export const KrishnaWatermark = ({
 
   return (
     <div 
+      ref={watermarkRef}
       className={`absolute ${positionClasses[position]} ${sizeClasses[size]} pointer-events-none transition-opacity duration-1000`}
-      style={{ opacity }}
+      style={{ 
+        opacity,
+        transform: `translate(${parallaxOffset.x}px, ${parallaxOffset.y}px)`
+      }}
     >
       {/* Krishna with Flute Silhouette */}
       <svg viewBox="0 0 256 256" className="w-full h-full text-peacock-teal animate-[pulse_6s_ease-in-out_infinite]">

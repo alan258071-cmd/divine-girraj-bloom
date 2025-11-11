@@ -49,9 +49,9 @@ export const PaymentTimelineSection = () => {
         </svg>
       </div>
 
-      {/* Krishna Watermarks */}
-      <KrishnaWatermark position="center" size="large" opacity={0.04} />
-      <KrishnaWatermark position="top-right" size="small" opacity={0.06} />
+      {/* Krishna Watermarks with Parallax */}
+      <KrishnaWatermark position="center" size="large" opacity={0.04} parallaxSpeed={0.35} />
+      <KrishnaWatermark position="top-right" size="small" opacity={0.06} parallaxSpeed={0.18} />
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-24">

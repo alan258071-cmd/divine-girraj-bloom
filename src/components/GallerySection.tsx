@@ -39,9 +39,9 @@ export const GallerySection = () => {
       {/* Jali Pattern */}
       <JaliPattern opacity={0.04} className="text-peacock-teal" />
 
-      {/* Krishna Watermarks */}
-      <KrishnaWatermark position="center" size="large" opacity={0.03} />
-      <KrishnaWatermark position="top-right" size="small" opacity={0.05} />
+      {/* Krishna Watermarks with Parallax */}
+      <KrishnaWatermark position="center" size="large" opacity={0.03} parallaxSpeed={0.4} />
+      <KrishnaWatermark position="top-right" size="small" opacity={0.05} parallaxSpeed={0.25} />
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-20">
