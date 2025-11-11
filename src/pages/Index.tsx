@@ -13,6 +13,7 @@ import { FloatingOmSymbols } from "@/components/FloatingOmSymbols";
 import { FloatingDiyas } from "@/components/FloatingDiyas";
 import { TempleBells } from "@/components/TempleBells";
 import { DevotionalSoundToggle } from "@/components/DevotionalSoundToggle";
+import { DivineQuotes } from "@/components/DivineQuotes";
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
@@ -41,6 +42,10 @@ const Index = () => {
         </div>
         
         <AmenitiesSection />
+        
+        {/* Divine Quotes Section */}
+        <DivineQuotes />
+        
         <GallerySection />
         <InvestmentSection />
         <LuckyDrawSection />

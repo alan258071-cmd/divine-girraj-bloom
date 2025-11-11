@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { MandalaBg } from "./MandalaBg";
 import { LotusDivider } from "./LotusDivider";
+import { KrishnaBlessings } from "./KrishnaBlessings";
+import sacredAnimalsBg from "@/assets/sacred-animals-bg.jpg";
 
 const highlights = [
   {
@@ -52,7 +54,13 @@ export const InvestmentSection = () => {
       ref={sectionRef}
       className="relative py-32 overflow-hidden"
     >
-      {/* Complex Background */}
+      {/* Sacred Animals Background */}
+      <div className="absolute inset-0 opacity-[0.06]">
+        <img src={sacredAnimalsBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-br from-peacock-teal/20 via-background/90 to-saffron-gold/20" />
+      </div>
+
+      {/* Complex Background Layers */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-peacock-teal/10 via-background to-saffron-gold/10" />
         <div 
@@ -65,6 +73,9 @@ export const InvestmentSection = () => {
 
       {/* Animated Mandala */}
       <MandalaBg className="opacity-[0.02]" animate={false} />
+
+      {/* Krishna Blessings */}
+      <KrishnaBlessings />
 
       <div className="relative container mx-auto px-4">
         <div className="text-center mb-20">

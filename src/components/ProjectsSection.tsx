@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { JaliPattern } from "./JaliPattern";
+import { KrishnaBlessings } from "./KrishnaBlessings";
+import radhaKrishnaBg from "@/assets/radha-krishna-silhouette.jpg";
 
 const projects = [
   {
@@ -19,8 +22,20 @@ export const ProjectsSection = () => {
   const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-b from-sacred-white to-background">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="relative py-24 bg-gradient-to-b from-sacred-white to-background overflow-hidden">
+      {/* Radha Krishna Background */}
+      <div className="absolute inset-0 opacity-[0.08]">
+        <img src={radhaKrishnaBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-sacred-white/90 via-background/80 to-background/90" />
+      </div>
+
+      {/* Jali Pattern */}
+      <JaliPattern opacity={0.04} className="text-peacock-teal" />
+
+      {/* Krishna Blessings */}
+      <KrishnaBlessings />
+
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-krishna-blue relative inline-block">
             Completed Projects

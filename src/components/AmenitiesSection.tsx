@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { JaliPattern } from "./JaliPattern";
 import { LotusDivider } from "./LotusDivider";
+import { KrishnaBlessings } from "./KrishnaBlessings";
+import krishnaBlessingBg from "@/assets/krishna-blessing-bg.jpg";
 
 const amenities = [
   {
@@ -62,8 +64,17 @@ export const AmenitiesSection = () => {
       ref={sectionRef}
       className="relative py-24 overflow-hidden bg-gradient-to-b from-background to-sandalwood-cream"
     >
+      {/* Krishna Blessing Background */}
+      <div className="absolute inset-0 opacity-[0.08]">
+        <img src={krishnaBlessingBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80" />
+      </div>
+
       {/* Jali Pattern */}
       <JaliPattern opacity={0.05} />
+
+      {/* Krishna Blessings Elements */}
+      <KrishnaBlessings />
 
       {/* Decorative Corner Elements */}
       <div className="absolute top-0 left-0 w-48 h-48 opacity-10 pointer-events-none">
