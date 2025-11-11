@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { JaliPattern } from "./JaliPattern";
+import { LotusDivider } from "./LotusDivider";
 
 const amenities = [
   {
@@ -58,28 +60,44 @@ export const AmenitiesSection = () => {
     <section
       id="amenities"
       ref={sectionRef}
-      className="relative py-24 overflow-hidden"
+      className="relative py-24 overflow-hidden bg-gradient-to-b from-background to-sandalwood-cream"
     >
-      {/* Feather Corner Decorations */}
-      <div className="absolute top-0 left-0 w-32 h-32 opacity-15 pointer-events-none">
-        <svg viewBox="0 0 128 128" className="w-full h-full text-peacock-teal feather-float">
-          <ellipse cx="64" cy="48" rx="32" ry="40" fill="currentColor" opacity="0.3" />
-          <path d="M64 80 Q60 100 64 128" stroke="currentColor" strokeWidth="3" fill="none" />
+      {/* Jali Pattern */}
+      <JaliPattern opacity={0.05} />
+
+      {/* Decorative Corner Elements */}
+      <div className="absolute top-0 left-0 w-48 h-48 opacity-10 pointer-events-none">
+        <svg viewBox="0 0 200 200" className="w-full h-full text-peacock-teal">
+          <circle cx="0" cy="0" r="180" fill="currentColor" opacity="0.3" />
+          <circle cx="0" cy="0" r="120" fill="currentColor" opacity="0.2" />
+        </svg>
+      </div>
+      <div className="absolute bottom-0 right-0 w-48 h-48 opacity-10 pointer-events-none">
+        <svg viewBox="0 0 200 200" className="w-full h-full text-saffron-gold">
+          <circle cx="200" cy="200" r="180" fill="currentColor" opacity="0.3" />
+          <circle cx="200" cy="200" r="120" fill="currentColor" opacity="0.2" />
         </svg>
       </div>
 
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-4 relative">
+        <div className="text-center mb-20">
           <h2
-            className={`section-header text-4xl md:text-5xl font-bold mb-4 text-krishna-blue relative inline-block ${
+            className={`section-header font-cinzel text-5xl md:text-6xl font-bold mb-6 text-krishna-blue relative inline-block ${
               isVisible ? "scroll-reveal" : "opacity-0"
             }`}
           >
             Divine Amenities
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-temple-gold to-transparent" />
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
+              <div className="w-12 h-px bg-gradient-to-r from-transparent to-temple-gold" />
+              <svg width="16" height="16" viewBox="0 0 16 16" className="text-temple-gold">
+                <circle cx="8" cy="8" r="6" fill="currentColor" opacity="0.3" />
+                <circle cx="8" cy="8" r="3" fill="currentColor" />
+              </svg>
+              <div className="w-12 h-px bg-gradient-to-l from-transparent to-temple-gold" />
+            </div>
           </h2>
           <p
-            className={`text-lg text-muted-foreground max-w-2xl mx-auto ${
+            className={`font-cormorant text-xl text-muted-foreground max-w-2xl mx-auto ${
               isVisible ? "scroll-reveal" : "opacity-0"
             }`}
             style={{ animationDelay: "100ms" }}
@@ -92,42 +110,61 @@ export const AmenitiesSection = () => {
           {amenities.map((amenity, index) => (
             <div
               key={index}
-              className={`amenity-card group bg-card rounded-2xl p-8 border border-border transition-all duration-300 hover:scale-105 hover:shadow-[0_12px_32px_hsl(215_65%_25%/0.12)] hover:border-peacock-teal/30 ${
+              className={`amenity-card group relative bg-card rounded-2xl p-10 border-2 border-border/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_60px_hsl(215_65%_25%/0.15)] hover:border-peacock-teal/50 ${
                 isVisible ? "scroll-reveal" : "opacity-0"
               }`}
               style={{ animationDelay: `${(index + 1) * 60}ms` }}
             >
-              <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                {amenity.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-krishna-blue">
-                {amenity.title}
-              </h3>
-              <p className="text-muted-foreground">{amenity.description}</p>
-
-              {/* Peacock Eye-Spot Check */}
-              <div className="mt-4 flex items-center gap-2 text-peacock-teal text-sm font-medium">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  className="transition-all duration-180 group-hover:scale-110"
-                >
-                  <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.2" />
-                  <circle cx="8" cy="8" r="4" fill="currentColor" opacity="0.4" />
-                  <path
-                    d="M5 8l2 2 4-4"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
+              {/* Glow Effect on Hover */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-peacock-teal/5 to-saffron-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Corner Ornament */}
+              <div className="absolute top-3 right-3 w-6 h-6 opacity-20 group-hover:opacity-40 transition-opacity">
+                <svg viewBox="0 0 24 24" className="w-full h-full text-temple-gold">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.3" />
+                  <circle cx="12" cy="12" r="6" fill="currentColor" opacity="0.5" />
+                  <circle cx="12" cy="12" r="3" fill="currentColor" />
                 </svg>
-                <span>Included</span>
+              </div>
+
+              <div className="relative">
+                <div className="text-6xl mb-6 transition-all duration-500 group-hover:scale-125 group-hover:rotate-6 filter drop-shadow-lg">
+                  {amenity.icon}
+                </div>
+                <h3 className="font-cinzel text-2xl font-bold mb-3 text-krishna-blue">
+                  {amenity.title}
+                </h3>
+                <p className="font-cormorant text-base text-muted-foreground leading-relaxed">{amenity.description}</p>
+
+                {/* Peacock Eye-Spot Check */}
+                <div className="mt-6 flex items-center gap-3 text-peacock-teal text-sm font-semibold">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    className="transition-all duration-300 group-hover:scale-125 group-hover:rotate-12"
+                  >
+                    <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.15" />
+                    <circle cx="10" cy="10" r="6" fill="currentColor" opacity="0.3" />
+                    <circle cx="10" cy="10" r="3" fill="currentColor" opacity="0.5" />
+                    <path
+                      d="M6 10l2.5 2.5 5.5-5.5"
+                      stroke="white"
+                      strokeWidth="2"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="font-cormorant">Premium Feature</span>
+                </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Lotus Divider */}
+        <LotusDivider variant="gradient" className="mt-16" />
       </div>
     </section>
   );

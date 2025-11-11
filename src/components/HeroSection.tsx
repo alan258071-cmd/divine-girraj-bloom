@@ -1,24 +1,31 @@
 import { FeatherParticle } from "./FeatherParticle";
+import { JaliPattern } from "./JaliPattern";
+import { MandalaBg } from "./MandalaBg";
+import heroBackground from "@/assets/hero-background.jpg";
 
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video */}
-      <video
-        id="hero-video"
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/api/placeholder/1920/1080"
-      >
-        {/* {HERO_VIDEO_URL} - Replace with actual video */}
-        <source src="/placeholder-video.mp4" type="video/mp4" />
-      </video>
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={heroBackground}
+          alt="Vrindavan Landscape"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-krishna-blue/40 via-transparent to-sandalwood-cream/60" />
+      </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-sandalwood-cream/80 via-sandalwood-cream/60 to-sandalwood-cream/90" />
+      {/* Jali Pattern Overlay */}
+      <JaliPattern opacity={0.12} className="text-sacred-white" />
+
+      {/* Mandala Background */}
+      <MandalaBg animate />
+
+      {/* Radial Glow */}
+      <div className="absolute inset-0 bg-radial-gradient from-peacock-teal/20 via-transparent to-transparent" style={{
+        background: "radial-gradient(circle at 50% 40%, hsl(185 55% 45% / 0.15), transparent 60%)"
+      }} />
 
       {/* Temple Silhouettes (Parallax Layer) */}
       <div className="absolute bottom-0 left-0 right-0 h-64 opacity-[0.08] pointer-events-none">
@@ -45,42 +52,75 @@ export const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
+        {/* Decorative Top Element */}
+        <div className="flex justify-center mb-8 scroll-reveal" style={{ animationDelay: "50ms" }}>
+          <div className="flex items-center gap-4 opacity-60">
+            <div className="w-20 h-px bg-gradient-to-r from-transparent to-temple-gold" />
+            <svg width="32" height="32" viewBox="0 0 32 32" className="text-temple-gold">
+              <path d="M16 2 L18 8 L24 8 L19 12 L21 18 L16 14 L11 18 L13 12 L8 8 L14 8 Z" fill="currentColor" />
+            </svg>
+            <div className="w-20 h-px bg-gradient-to-l from-transparent to-temple-gold" />
+          </div>
+        </div>
+
         <h1
-          className="text-5xl md:text-7xl font-bold mb-6 scroll-reveal bg-gradient-to-r from-krishna-blue via-peacock-teal to-krishna-blue bg-clip-text text-transparent"
-          style={{ animationDelay: "150ms" }}
+          className="font-cinzel text-5xl md:text-7xl lg:text-8xl font-bold mb-6 scroll-reveal text-shadow-lg"
+          style={{ 
+            animationDelay: "150ms",
+            textShadow: "0 4px 20px rgba(0,0,0,0.3), 0 0 40px rgba(215, 180, 115, 0.2)"
+          }}
         >
-          Experience Divine Living
+          <span className="bg-gradient-to-r from-sacred-white via-temple-gold to-sacred-white bg-clip-text text-transparent drop-shadow-2xl">
+            Experience Divine Living
+          </span>
         </h1>
         <p
-          className="text-xl md:text-2xl mb-8 text-krishna-blue/80 max-w-2xl mx-auto scroll-reveal"
-          style={{ animationDelay: "250ms" }}
+          className="font-cormorant text-xl md:text-3xl mb-8 text-sacred-white/95 max-w-3xl mx-auto scroll-reveal font-medium tracking-wide"
+          style={{ 
+            animationDelay: "250ms",
+            textShadow: "0 2px 12px rgba(0,0,0,0.5)"
+          }}
         >
           125 Premium Residential Plots in the Sacred Land of Vrindavan
         </p>
 
         <div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center scroll-reveal"
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center scroll-reveal"
           style={{ animationDelay: "350ms" }}
         >
-          <button className="group relative bg-gradient-to-r from-krishna-blue to-peacock-teal text-sacred-white px-8 py-4 rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:scale-102 hover:shadow-[0_12px_32px_hsl(215_65%_25%/0.3)]">
-            <span className="relative z-10">Explore Plots</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-peacock-teal to-krishna-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <button className="group relative bg-gradient-to-br from-saffron-gold via-temple-gold to-saffron-gold text-krishna-blue px-10 py-5 rounded-full font-cinzel font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105 shadow-[0_8px_32px_hsl(40_90%_55%/0.4)] hover:shadow-[0_16px_48px_hsl(40_90%_55%/0.6)]">
+            <span className="relative z-10 flex items-center gap-3">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 1 L12 7 L18 7 L13 11 L15 17 L10 13 L5 17 L7 11 L2 7 L8 7 Z" />
+              </svg>
+              Explore Plots
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-br from-temple-gold to-saffron-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
 
-          <button className="relative bg-transparent border-2 border-temple-gold text-krishna-blue px-8 py-4 rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:scale-102 hover:border-saffron-gold peacock-sheen">
-            <span className="relative z-10">Virtual Tour</span>
+          <button className="group relative bg-sacred-white/10 backdrop-blur-md border-2 border-sacred-white/40 text-sacred-white px-10 py-5 rounded-full font-cinzel font-semibold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-sacred-white/20 hover:border-sacred-white/60 peacock-sheen">
+            <span className="relative z-10 flex items-center gap-3">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="10" cy="10" r="8" />
+                <path d="M8 10 L12 10 M10 8 L10 12" />
+              </svg>
+              Virtual Tour
+            </span>
           </button>
         </div>
 
         {/* Pre-Launch Badge */}
         <div
           id="prelaunch-cta"
-          className="mt-12 inline-flex items-center gap-3 bg-sacred-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-temple-gold/30 scroll-reveal breathe"
+          className="mt-16 inline-flex items-center gap-4 bg-sacred-white/95 backdrop-blur-md px-8 py-4 rounded-full border-2 border-temple-gold/50 scroll-reveal breathe shadow-[0_8px_32px_hsl(40_90%_55%/0.3)]"
           style={{ animationDelay: "450ms" }}
         >
-          <span className="w-2 h-2 bg-saffron-gold rounded-full animate-pulse" />
-          <span className="text-sm font-semibold text-krishna-blue">
-            Pre-Launch Offer • Only 125 Plots Available
+          <div className="relative">
+            <span className="absolute inset-0 w-3 h-3 bg-saffron-gold rounded-full animate-ping" />
+            <span className="relative block w-3 h-3 bg-saffron-gold rounded-full" />
+          </div>
+          <span className="font-cormorant text-base font-semibold text-krishna-blue tracking-wide">
+            Pre-Launch Offer • Only 125 Sacred Plots Available
           </span>
         </div>
       </div>
