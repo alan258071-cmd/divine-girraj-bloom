@@ -1,4 +1,5 @@
 import { JaliPattern } from "./JaliPattern";
+import { KrishnaWatermark } from "./KrishnaWatermark";
 import fortunerImg from "@/assets/prizes/fortuner.jpg";
 import innovaImg from "@/assets/prizes/innova.jpg";
 import scorpioImg from "@/assets/prizes/scorpio.jpg";
@@ -57,6 +58,10 @@ export const LuckyDrawSection = () => {
     <section className="relative py-32 bg-gradient-to-br from-krishna-blue via-peacock-teal to-krishna-blue overflow-hidden">
       {/* Jali Pattern */}
       <JaliPattern opacity={0.08} className="text-sacred-white" />
+      
+      {/* Krishna Watermarks */}
+      <KrishnaWatermark position="top-left" size="large" opacity={0.08} />
+      <KrishnaWatermark position="bottom-right" size="medium" opacity={0.06} />
       
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-15">

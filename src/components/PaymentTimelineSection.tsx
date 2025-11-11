@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { LotusDivider } from "./LotusDivider";
+import { KrishnaWatermark } from "./KrishnaWatermark";
 
 const milestones = [
   { label: "On EOI Submission", amount: "₹1 Lakh", stage: "Stage 1" },
@@ -47,6 +48,10 @@ export const PaymentTimelineSection = () => {
           <rect width="100%" height="100%" fill="url(#timeline-pattern)" />
         </svg>
       </div>
+
+      {/* Krishna Watermarks */}
+      <KrishnaWatermark position="center" size="large" opacity={0.04} />
+      <KrishnaWatermark position="top-right" size="small" opacity={0.06} />
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-24">

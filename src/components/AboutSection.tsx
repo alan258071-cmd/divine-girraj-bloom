@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { MandalaBg } from "./MandalaBg";
 import { JaliPattern } from "./JaliPattern";
 import { LotusDivider } from "./LotusDivider";
+import { KrishnaWatermark } from "./KrishnaWatermark";
 import radhaKrishnaBg from "@/assets/radha-krishna-silhouette.jpg";
 
 export const AboutSection = () => {
@@ -42,6 +43,10 @@ export const AboutSection = () => {
 
       {/* Mandala Background */}
       <MandalaBg className="opacity-[0.02]" animate={true} />
+
+      {/* Krishna Watermarks */}
+      <KrishnaWatermark position="top-right" size="medium" opacity={0.06} />
+      <KrishnaWatermark position="bottom-left" size="large" opacity={0.04} />
 
       {/* Decorative Floating Elements */}
       <div className="absolute top-20 left-10 w-32 h-32 opacity-10">

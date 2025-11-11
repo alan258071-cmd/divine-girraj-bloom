@@ -13,9 +13,9 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-sacred-white/95 backdrop-blur-md border-b border-temple-gold/20"
+          ? "bg-gradient-to-r from-krishna-blue via-peacock-teal to-krishna-blue shadow-lg border-b border-saffron-gold/30"
           : "bg-transparent"
       }`}
     >
@@ -37,19 +37,29 @@ export const Header = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-10">
-          <a href="#amenities" className="devotional-link font-cormorant text-base font-semibold">
+          <a href="#amenities" className={`font-cormorant text-base font-semibold transition-colors duration-300 ${
+            scrolled ? "text-sacred-white hover:text-saffron-gold" : "devotional-link"
+          }`}>
             Amenities
           </a>
-          <a href="#investment" className="devotional-link font-cormorant text-base font-semibold">
+          <a href="#investment" className={`font-cormorant text-base font-semibold transition-colors duration-300 ${
+            scrolled ? "text-sacred-white hover:text-saffron-gold" : "devotional-link"
+          }`}>
             Investment
           </a>
-          <a href="#gallery" className="devotional-link font-cormorant text-base font-semibold">
+          <a href="#gallery" className={`font-cormorant text-base font-semibold transition-colors duration-300 ${
+            scrolled ? "text-sacred-white hover:text-saffron-gold" : "devotional-link"
+          }`}>
             Gallery
           </a>
-          <a href="#projects" className="devotional-link font-cormorant text-base font-semibold">
+          <a href="#projects" className={`font-cormorant text-base font-semibold transition-colors duration-300 ${
+            scrolled ? "text-sacred-white hover:text-saffron-gold" : "devotional-link"
+          }`}>
             Projects
           </a>
-          <a href="#contact" className="devotional-link font-cormorant text-base font-semibold">
+          <a href="#contact" className={`font-cormorant text-base font-semibold transition-colors duration-300 ${
+            scrolled ? "text-sacred-white hover:text-saffron-gold" : "devotional-link"
+          }`}>
             Contact
           </a>
         </nav>

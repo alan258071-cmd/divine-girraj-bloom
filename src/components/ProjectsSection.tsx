@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { JaliPattern } from "./JaliPattern";
 import { KrishnaBlessings } from "./KrishnaBlessings";
+import { KrishnaWatermark } from "./KrishnaWatermark";
 import radhaKrishnaBg from "@/assets/radha-krishna-silhouette.jpg";
 
 const projects = [
@@ -36,6 +37,10 @@ export const ProjectsSection = () => {
 
       {/* Krishna Blessings */}
       <KrishnaBlessings />
+
+      {/* Krishna Watermarks */}
+      <KrishnaWatermark position="top-left" size="medium" opacity={0.05} />
+      <KrishnaWatermark position="bottom-right" size="large" opacity={0.04} />
 
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">

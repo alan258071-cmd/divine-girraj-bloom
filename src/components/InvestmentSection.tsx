@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { MandalaBg } from "./MandalaBg";
 import { LotusDivider } from "./LotusDivider";
 import { KrishnaBlessings } from "./KrishnaBlessings";
+import { KrishnaWatermark } from "./KrishnaWatermark";
 import sacredAnimalsBg from "@/assets/sacred-animals-bg.jpg";
 
 const highlights = [
@@ -84,6 +85,10 @@ export const InvestmentSection = () => {
 
       {/* Krishna Blessings */}
       <KrishnaBlessings />
+
+      {/* Krishna Watermarks */}
+      <KrishnaWatermark position="top-right" size="medium" opacity={0.05} />
+      <KrishnaWatermark position="center" size="large" opacity={0.03} />
 
       <div className="relative container mx-auto px-4">
         <div className="text-center mb-20">

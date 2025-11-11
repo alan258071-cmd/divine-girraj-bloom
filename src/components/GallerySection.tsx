@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { LotusDivider } from "./LotusDivider";
 import { JaliPattern } from "./JaliPattern";
+import { KrishnaWatermark } from "./KrishnaWatermark";
 
 const galleryVideos = [
   {
@@ -37,6 +38,10 @@ export const GallerySection = () => {
     <section id="gallery" className="relative py-24 bg-gradient-to-b from-sandalwood-cream via-sacred-white to-background overflow-hidden">
       {/* Jali Pattern */}
       <JaliPattern opacity={0.04} className="text-peacock-teal" />
+
+      {/* Krishna Watermarks */}
+      <KrishnaWatermark position="center" size="large" opacity={0.03} />
+      <KrishnaWatermark position="top-right" size="small" opacity={0.05} />
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-20">

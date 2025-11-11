@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { JaliPattern } from "./JaliPattern";
 import { LotusDivider } from "./LotusDivider";
 import { KrishnaBlessings } from "./KrishnaBlessings";
+import { KrishnaWatermark } from "./KrishnaWatermark";
 import krishnaBlessingBg from "@/assets/krishna-blessing-bg.jpg";
 
 const amenities = [
@@ -85,6 +86,10 @@ export const AmenitiesSection = () => {
 
       {/* Krishna Blessings Elements */}
       <KrishnaBlessings />
+
+      {/* Krishna Watermarks */}
+      <KrishnaWatermark position="top-left" size="medium" opacity={0.06} />
+      <KrishnaWatermark position="bottom-right" size="large" opacity={0.04} />
 
       {/* Decorative Corner Elements */}
       <div className="absolute top-0 left-0 w-48 h-48 opacity-10 pointer-events-none">
