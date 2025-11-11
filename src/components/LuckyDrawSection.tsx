@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { JaliPattern } from "./JaliPattern";
 import { KrishnaWatermark } from "./KrishnaWatermark";
 import fortunerImg from "@/assets/prizes/fortuner.jpg";
@@ -54,8 +55,28 @@ const prizes = [
 ];
 
 export const LuckyDrawSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1, rootMargin: "50px" }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative py-32 bg-gradient-to-br from-krishna-blue via-peacock-teal to-krishna-blue overflow-hidden">
+    <section ref={sectionRef} className="relative py-32 bg-gradient-to-br from-krishna-blue via-peacock-teal to-krishna-blue overflow-hidden">
       {/* Jali Pattern */}
       <JaliPattern opacity={0.08} className="text-sacred-white" />
       
@@ -81,7 +102,7 @@ export const LuckyDrawSection = () => {
 
       <div className="relative container mx-auto px-4">
         <div className="text-center mb-20">
-          <h2 className="font-cinzel text-5xl md:text-6xl font-bold mb-6 text-sacred-white relative inline-block">
+          <h2 className={`font-cinzel text-5xl md:text-6xl font-bold mb-6 text-sacred-white relative inline-block ${isVisible ? "scroll-reveal-scale" : "opacity-0"}`}>
             Lucky Draw — Win Big!
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3">
               <div className="w-20 h-px bg-gradient-to-r from-transparent to-saffron-gold" />
@@ -92,7 +113,7 @@ export const LuckyDrawSection = () => {
               <div className="w-20 h-px bg-gradient-to-l from-transparent to-saffron-gold" />
             </div>
           </h2>
-          <p className="font-cormorant text-xl text-sacred-white/95 max-w-3xl mx-auto">
+          <p className={`font-cormorant text-xl text-sacred-white/95 max-w-3xl mx-auto ${isVisible ? "scroll-reveal" : "opacity-0"}`} style={{ animationDelay: "100ms" }}>
             Pay ₹1 Lakh EOI + ₹10 Lakh within 1-20 days to enter the draw. Winners from 1st to 125th position!
           </p>
         </div>
@@ -101,7 +122,8 @@ export const LuckyDrawSection = () => {
           {prizes.map((prize, index) => (
             <div
               key={index}
-              className="prize-card group relative"
+              className={`prize-card group relative ${isVisible ? "scroll-reveal-rotate" : "opacity-0"}`}
+              style={{ animationDelay: `${(index + 1) * 80}ms` }}
             >
               {/* Outer Glow Ring */}
               <div className="absolute -inset-1 bg-gradient-to-br from-saffron-gold via-temple-gold to-saffron-gold rounded-3xl opacity-40 group-hover:opacity-70 blur-xl transition-opacity duration-500" />
@@ -149,7 +171,7 @@ export const LuckyDrawSection = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="group relative bg-gradient-to-br from-saffron-gold via-temple-gold to-saffron-gold text-krishna-blue px-14 py-5 rounded-full font-cinzel font-bold text-lg transition-all duration-500 hover:scale-110 shadow-[0_16px_64px_hsl(40_90%_55%/0.6)] hover:shadow-[0_24px_80px_hsl(40_90%_55%/0.8)] breathe overflow-hidden">
+          <button className={`group relative bg-gradient-to-br from-saffron-gold via-temple-gold to-saffron-gold text-krishna-blue px-14 py-5 rounded-full font-cinzel font-bold text-lg transition-all duration-500 hover:scale-110 shadow-[0_16px_64px_hsl(40_90%_55%/0.6)] hover:shadow-[0_24px_80px_hsl(40_90%_55%/0.8)] breathe overflow-hidden ${isVisible ? "scroll-reveal-scale" : "opacity-0"}`} style={{ animationDelay: "600ms" }}>
             <span className="relative z-10 flex items-center gap-3">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z" />

@@ -22,10 +22,10 @@ export const PaymentTimelineSection = () => {
           // Animate progress line
           setTimeout(() => {
             setProgress(100);
-          }, 200);
+          }, 400);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1, rootMargin: "50px" }
     );
 
     if (sectionRef.current) {
@@ -100,9 +100,9 @@ export const PaymentTimelineSection = () => {
               <div
                 key={index}
                 className={`timeline-step flex flex-col items-center flex-1 ${
-                  isVisible ? "scroll-reveal" : "opacity-0"
+                  isVisible ? "scroll-reveal-scale" : "opacity-0"
                 }`}
-                style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                style={{ animationDelay: `${(index + 1) * 150}ms` }}
               >
                 {/* Chip Container with Glow */}
                 <div className="relative mb-8">
@@ -155,9 +155,9 @@ export const PaymentTimelineSection = () => {
             <div
               key={index}
               className={`flex items-center gap-6 ${
-                isVisible ? "scroll-reveal" : "opacity-0"
+                isVisible ? (index % 2 === 0 ? "scroll-reveal-left" : "scroll-reveal-right") : "opacity-0"
               }`}
-              style={{ animationDelay: `${(index + 1) * 80}ms` }}
+              style={{ animationDelay: `${(index + 1) * 120}ms` }}
             >
               <div className="relative flex-shrink-0">
                 <div className="absolute -inset-2 bg-gradient-to-br from-peacock-teal via-temple-gold to-saffron-gold rounded-full opacity-40 blur-lg" />

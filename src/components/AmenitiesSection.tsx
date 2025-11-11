@@ -59,7 +59,7 @@ export const AmenitiesSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: "50px" }
     );
 
     if (sectionRef.current) {
@@ -137,9 +137,9 @@ export const AmenitiesSection = () => {
             <div
               key={index}
               className={`amenity-card group relative bg-card rounded-2xl p-10 border-2 border-border/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_60px_hsl(215_65%_25%/0.15)] hover:border-peacock-teal/50 ${
-                isVisible ? "scroll-reveal" : "opacity-0"
+                isVisible ? (index % 2 === 0 ? "scroll-reveal-left" : "scroll-reveal-right") : "opacity-0"
               }`}
-              style={{ animationDelay: `${(index + 1) * 60}ms` }}
+              style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
               {/* Glow Effect on Hover */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-peacock-teal/5 to-saffron-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

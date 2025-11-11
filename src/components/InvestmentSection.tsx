@@ -47,7 +47,7 @@ export const InvestmentSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: "50px" }
     );
 
     if (sectionRef.current) {
@@ -125,9 +125,9 @@ export const InvestmentSection = () => {
             <div
               key={index}
               className={`investment-card group relative ${
-                isVisible ? "scroll-reveal" : "opacity-0"
+                isVisible ? "scroll-reveal-scale" : "opacity-0"
               }`}
-              style={{ animationDelay: `${(index + 1) * 100}ms` }}
+              style={{ animationDelay: `${(index + 1) * 150}ms` }}
             >
               {/* Outer Glow Ring */}
               <div className={`absolute -inset-1 bg-gradient-to-br ${highlight.gradient} rounded-3xl opacity-30 group-hover:opacity-60 blur-xl transition-all duration-500`} />

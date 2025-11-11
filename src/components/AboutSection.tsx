@@ -16,7 +16,7 @@ export const AboutSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: "50px" }
     );
 
     if (sectionRef.current) {
@@ -101,7 +101,7 @@ export const AboutSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
             {/* Main Description Card */}
             <div
-              className={`about-card group ${isVisible ? "scroll-reveal" : "opacity-0"}`}
+              className={`about-card group ${isVisible ? "scroll-reveal-left" : "opacity-0"}`}
               style={{ animationDelay: "100ms" }}
             >
               <div className="relative h-full bg-gradient-to-br from-card via-sacred-white/50 to-card backdrop-blur-xl rounded-3xl p-10 border-2 border-peacock-teal/30 shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-[0_24px_80px_hsl(185_55%_45%/0.25)] overflow-hidden">
@@ -125,7 +125,7 @@ export const AboutSection = () => {
 
             {/* Premium Features Card */}
             <div
-              className={`about-card group ${isVisible ? "scroll-reveal" : "opacity-0"}`}
+              className={`about-card group ${isVisible ? "scroll-reveal-right" : "opacity-0"}`}
               style={{ animationDelay: "200ms" }}
             >
               <div className="relative h-full bg-gradient-to-br from-saffron-gold/10 via-card to-peacock-teal/10 backdrop-blur-xl rounded-3xl p-10 border-2 border-saffron-gold/30 shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-[0_24px_80px_hsl(40_90%_55%/0.25)] overflow-hidden">
@@ -150,7 +150,7 @@ export const AboutSection = () => {
 
           {/* Location Highlights - Full Width Card */}
           <div
-            className={`about-card ${isVisible ? "scroll-reveal" : "opacity-0"}`}
+            className={`about-card ${isVisible ? "scroll-reveal-scale" : "opacity-0"}`}
             style={{ animationDelay: "300ms" }}
           >
             <div className="relative bg-gradient-to-br from-peacock-teal/5 via-card to-saffron-gold/5 backdrop-blur-xl rounded-3xl p-12 border-2 border-peacock-teal/30 shadow-2xl overflow-hidden">
@@ -180,7 +180,7 @@ export const AboutSection = () => {
                 
                 {/* Connectivity Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="connectivity-card group relative">
+                  <div className={`connectivity-card group relative ${isVisible ? "scroll-reveal-scale" : "opacity-0"}`} style={{ animationDelay: "400ms" }}>
                     <div className="absolute -inset-1 bg-gradient-to-br from-peacock-teal to-saffron-gold rounded-2xl opacity-30 group-hover:opacity-50 blur-lg transition-opacity" />
                     <div className="relative bg-sacred-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-peacock-teal/30 transition-all duration-300 hover:scale-105 hover:border-peacock-teal/60">
                       <div className="text-6xl mb-4">🛣️</div>
@@ -191,7 +191,7 @@ export const AboutSection = () => {
                     </div>
                   </div>
                   
-                  <div className="connectivity-card group relative">
+                  <div className={`connectivity-card group relative ${isVisible ? "scroll-reveal-scale" : "opacity-0"}`} style={{ animationDelay: "500ms" }}>
                     <div className="absolute -inset-1 bg-gradient-to-br from-saffron-gold to-peacock-teal rounded-2xl opacity-30 group-hover:opacity-50 blur-lg transition-opacity" />
                     <div className="relative bg-sacred-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-saffron-gold/30 transition-all duration-300 hover:scale-105 hover:border-saffron-gold/60">
                       <div className="text-6xl mb-4">🚗</div>
@@ -202,7 +202,7 @@ export const AboutSection = () => {
                     </div>
                   </div>
                   
-                  <div className="connectivity-card group relative">
+                  <div className={`connectivity-card group relative ${isVisible ? "scroll-reveal-scale" : "opacity-0"}`} style={{ animationDelay: "600ms" }}>
                     <div className="absolute -inset-1 bg-gradient-to-br from-peacock-teal to-saffron-gold rounded-2xl opacity-30 group-hover:opacity-50 blur-lg transition-opacity" />
                     <div className="relative bg-sacred-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-peacock-teal/30 transition-all duration-300 hover:scale-105 hover:border-peacock-teal/60">
                       <div className="text-6xl mb-4">🕉️</div>
