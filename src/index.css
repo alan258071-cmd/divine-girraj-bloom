@@ -200,7 +200,46 @@ All colors MUST be HSL.
   }
 }
 
+/* Enhanced easing functions for smooth transitions */
+:root {
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed header */
+  }
+
+  /* Custom scrollbar with devotional theme */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--sandalwood-cream));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--peacock-teal)),
+      hsl(var(--krishna-blue))
+    );
+    border-radius: 6px;
+    border: 2px solid hsl(var(--sandalwood-cream));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--saffron-gold)),
+      hsl(var(--temple-gold))
+    );
+  }
+
   * {
     @apply border-border;
   }
@@ -373,26 +412,47 @@ All colors MUST be HSL.
       transform: rotateY(0deg) translateY(0);
     }
   }
+
+  @keyframes section-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   
   .scroll-reveal {
-    animation: scroll-reveal 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: scroll-reveal 600ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   .scroll-reveal-left {
-    animation: scroll-reveal-left 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: scroll-reveal-left 700ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   .scroll-reveal-right {
-    animation: scroll-reveal-right 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: scroll-reveal-right 700ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   .scroll-reveal-scale {
-    animation: scroll-reveal-scale 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: scroll-reveal-scale 500ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   .scroll-reveal-rotate {
-    animation: scroll-reveal-rotate 800ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: scroll-reveal-rotate 800ms cubic-bezier(0.16, 1, 0.3, 1);
     transform-style: preserve-3d;
+  }
+
+  .section-fade-in {
+    animation: section-fade-in 800ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Section entrance animation */
+  section {
+    transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   /* Breathing Pulse */

@@ -15,6 +15,8 @@ import { FloatingDiyas } from "@/components/FloatingDiyas";
 import { TempleBells } from "@/components/TempleBells";
 import { DevotionalSoundToggle } from "@/components/DevotionalSoundToggle";
 import { DivineQuotes } from "@/components/DivineQuotes";
+import { SectionTransition } from "@/components/SectionTransition";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
@@ -25,6 +27,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
+      {/* Scroll Progress Bar */}
+      <ScrollProgressBar />
+      
+      {/* Section Transition Overlay */}
+      <SectionTransition />
+      
       {/* Floating Devotional Elements */}
       <FloatingOmSymbols />
       <FloatingDiyas />
